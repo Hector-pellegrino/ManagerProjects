@@ -1,5 +1,30 @@
 {
-  "projects": [],
+  "projects": [
+    {
+      "id": "1a77",
+      "name": "Projeto 1",
+      "budget": "1000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "custo": 300,
+      "servicos": [
+        {
+          "name": "servico 1",
+          "custo": "100",
+          "description": "Teste servico 1",
+          "id": "c43c9d74-e832-4604-9aa7-0297b051a9e7"
+        },
+        {
+          "name": "serivço 2",
+          "custo": "200",
+          "description": "serviço 2",
+          "id": "820f5492-725e-47ef-894d-5eb7ed000dd3"
+        }
+      ]
+    }
+  ],
   "categories": [
     {
       "id": "1",
@@ -16,10 +41,6 @@
     {
       "id": "4",
       "name": "Planejamento"
-    },
-    {
-      "id": "5",
-      "name": "Escopo"
     }
   ]
 }
