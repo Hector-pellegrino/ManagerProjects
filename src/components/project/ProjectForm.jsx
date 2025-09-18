@@ -34,13 +34,23 @@ export default function ProjectForm({ handleSubmit, btnText, projectData }) {
   }
 
   function handleCategoria(evento) {
+    const selectedIndex = evento.target.selectedIndex
+  const selectedOption = evento.target.options[selectedIndex]
+
+  if (selectedOption && selectedOption.value) {
     setProject({
       ...project,
       category: {
-        id: evento.target.value,
-        name: evento.target.options[evento.target.selectedIndex].text,
+        id: selectedOption.value,
+        name: selectedOption.text,
       },
     })
+  } else {
+    setProject({
+      ...project,
+      category: null,
+    })
+  }
   }
   return (
     <form onSubmit={submit} className={styles.form}>
