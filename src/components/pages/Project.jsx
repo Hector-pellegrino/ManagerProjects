@@ -50,7 +50,7 @@ export default function Project() {
     fetch(`${API_URL}/projects/${project.id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application.json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(project),
     })
@@ -87,13 +87,14 @@ export default function Project() {
     fetch(`${API_URL}/projects/${project.id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application.json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(project),
     })
       .then((resposta) => resposta.json())
       .then((data) => {
         setServices(data.servicos)
+        setProject(data)
         setShowServiceForm(!showServiceForm)
         setMessageKey(Date.now())
         setMessage('Serviço adicionado!')
@@ -113,7 +114,7 @@ export default function Project() {
     fetch(`${API_URL}/projects/${projectUpdated.id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application.json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(projectUpdated),
     })
