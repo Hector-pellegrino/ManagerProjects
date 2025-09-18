@@ -1,5 +1,5 @@
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
 import { Navigate, useNavigate } from 'react-router-dom'
-
 import ProjectForm from '../project/ProjectForm'
 import styles from './novoProjeto.module.css'
 
@@ -12,7 +12,7 @@ export default function NovoProjeto() {
     projeto.custo = 0
     projeto.servicos = []
     
-    fetch("http://localhost:5000/projects", {
+    fetch(`${API_URL}/projects`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

@@ -1,3 +1,5 @@
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+
 import styles from './Projects.module.css'
 
 import { useLocation } from 'react-router-dom'
@@ -17,7 +19,7 @@ export default function Projects() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch('http://localhost:5000/projects', {
+      fetch(`${API_URL}/projects`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +42,7 @@ export default function Projects() {
   }
 
   function removeProject(id) {
-    fetch(`http://localhost:5000/projects/${id}`, {
+    fetch(`${API_URL}/projects/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

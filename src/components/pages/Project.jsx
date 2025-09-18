@@ -1,3 +1,5 @@
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+
 import { parse, v4 as uuidv4 } from 'uuid'
 
 import styles from './Project.module.css'
@@ -23,7 +25,7 @@ export default function Project() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(`http://localhost:5000/projects/${id}`, {
+      fetch(`${API_URL}/projects/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application.json',
@@ -45,7 +47,7 @@ export default function Project() {
       return false
     }
 
-    fetch(`http://localhost:5000/projects/${project.id}`, {
+    fetch(`${API_URL}/projects/${project.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application.json',
@@ -82,7 +84,7 @@ export default function Project() {
 
     project.custo = newCost
 
-    fetch(`http://localhost:5000/projects/${project.id}`, {
+    fetch(`${API_URL}/projects/${project.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application.json',
@@ -108,7 +110,7 @@ export default function Project() {
 
     projectUpdated.custo = parseFloat(projectUpdated.custo) - parseFloat(cost)
 
-    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+    fetch(`${API_URL}/projects/${projectUpdated.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application.json',
